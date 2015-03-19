@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Merhaba ile başlayalım"
 date:   2015-03-11 23:27:57
 categories: jekyll update
 ---
