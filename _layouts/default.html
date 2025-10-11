@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {% include head.html %}
+  {%- include head.html -%}
 
   <body>
 
-    {% include header.html %}
+    {%- include header.html -%}
 
-    <div class="page-content">
+    <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
-    </div>
+    </main>
 
-    {% include footer.html %}
+    {%- include footer.html -%}
+
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode"></button>
+    <a href="#" id="back-to-top" class="back-to-top" title="Back to Top">&uarr;</a>
+
+    <script src="{{ "/assets/js/dark-mode.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/scroll-animation.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/back-to-top.js" | relative_url }}"></script>
 
   </body>
 

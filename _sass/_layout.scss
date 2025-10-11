@@ -15,12 +15,44 @@
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
     float: left;
 
     &,
     &:visited {
         color: $grey-color-dark;
     }
+}
+.site-title span {
+    display: inline-block;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 25px;
+    right: 90px; // Position it to the left of the back-to-top button
+    background-color: $brand-color;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.836 17.836a.75.75 0 00-1.06-1.06l-1.59 1.59a.75.75 0 101.06 1.06l1.59-1.59zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.894 17.836a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25A.75.75 0 013 12zM6.106 6.106a.75.75 0 00-1.06-1.06l-1.59 1.59a.75.75 0 001.06 1.06l1.59-1.59z'/%3E%3C/svg%3E");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($brand-color, 15%);
+    }
+}
+
+.dark-mode .dark-mode-toggle {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath fill-rule='evenodd' d='M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.981A10.503 10.503 0 0118 18a10.5 10.5 0 01-10.5-10.5c0-1.562.337-3.045.952-4.384a.75.75 0 01.819-.162z' clip-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .site-nav {
@@ -46,49 +78,6 @@
         }
     }
 
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
-    }
 }
 
 
@@ -117,21 +106,10 @@
     gap: 20px;
 }
 
-.footer-col-wrapper {
+.footer-content-wrapper {
     font-size: 15px;
     color: $grey-color;
 }
-
-.social-media-list .svg-icon {
-    width: 24px;
-    height: 24px;
-    transition: fill 0.2s ease-in-out;
-    &:hover {
-        fill: $brand-color;
-    }
-}
-
-
 
 /**
  * Page content
@@ -142,72 +120,6 @@
 
 .page-heading {
     font-size: 20px;
-}
-
-.post-list {
-    margin-left: 0;
-    list-style: none;
-
-    > li {
-        margin-bottom: $spacing-unit;
-    }
-}
-
-.post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-}
-
-.post-link {
-    display: block;
-    font-size: 24px;
-}
-
-
-
-/**
- * Posts
- */
-.post-header {
-    margin-bottom: $spacing-unit;
-}
-
-.post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
-
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
-}
-
-.post-content {
-    margin-bottom: $spacing-unit;
-
-    h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
-    }
-
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
-    }
 }
 
 /**
@@ -225,12 +137,13 @@
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: 3px solid $grey-color-light;
-    margin-bottom: $spacing-unit;
-    object-fit: cover; /* Prevents the image from being stretched */
+    border: 2px solid $grey-color-light;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0; // Prevent the image from being squeezed by other elements
 }
 
 .profile-title, .profile-location {
@@ -289,6 +202,31 @@
     display: inline-block;
 }
 
+.skills-page .skill-category {
+    text-align: left;
+}
+
+.skills-page .skill-category-name {
+    text-align: left;
+    border-bottom: 1px solid $grey-color-light;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.skills-page .skill-tag-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8f8f8;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.skills-page .skill-endorsement {
+    font-size: 12px;
+    color: $grey-color;
+}
+
 .experience-list, .education-list {
     margin-left: 0;
 }
@@ -340,6 +278,120 @@
     }
 }
 
+.social-media-list .icon {
+    > svg {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        path {
+            fill: $grey-color;
+            transition: fill 0.2s ease-in-out;
+        }
+    }
+    &:hover path {
+        fill: $brand-color;
+    }
+}
+
+
+//
+// DARK MODE STYLES
+//
+.dark-mode {
+    background-color: $dark-background-color;
+    color: $dark-text-color;
+
+    .site-header {
+        border-top-color: $dark-brand-color;
+        border-bottom-color: $dark-border-color;
+    }
+
+    .site-title span {
+        color: $dark-text-color;
+    }
+
+    .site-title, .site-title:visited, .page-link {
+        color: $dark-text-color;
+    }
+
+    .page-link:hover {
+        color: $dark-brand-color;
+    }
+
+    .site-footer {
+        border-top-color: $dark-border-color;
+    }
+
+    .social-media-list .icon > svg path {
+        fill: $dark-grey-color;
+    }
+
+    .social-media-list .icon:hover path {
+        fill: $dark-brand-color;
+    }
+
+    .profile-picture {
+        border-color: $dark-border-color;
+    }
+
+    .profile-title, .profile-location, .experience-meta, .education-meta {
+        color: $dark-grey-color;
+    }
+
+    .section-heading {
+        border-bottom-color: $dark-border-color;
+    }
+
+    .skill-tag {
+        background-color: $dark-card-bg;
+        color: $dark-text-color;
+        border: 1px solid $dark-border-color;
+    }
+
+    .skills-page .skill-category-name {
+        border-bottom-color: $dark-border-color;
+    }
+
+    .skills-page .skill-tag-wrapper {
+        background-color: $dark-card-bg;
+        border: 1px solid $dark-border-color;
+    }
+
+    .project-item {
+        background-color: $dark-card-bg;
+        border-color: $dark-border-color;
+        box-shadow: none;
+    }
+
+    .project-item a, .project-title {
+        color: $dark-text-color;
+    }
+
+    .project-title:hover {
+        color: $dark-brand-color;
+    }
+
+    .project-tag {
+        background-color: lighten($dark-card-bg, 5%);
+        color: $dark-brand-color;
+    }
+
+    .contact-button {
+        background-color: $dark-brand-color;
+        color: $dark-background-color;
+        &:hover {
+            background-color: lighten($dark-brand-color, 10%);
+        }
+    }
+
+    .dark-mode-toggle {
+        background-color: $dark-brand-color;
+        &:hover {
+            background-color: lighten($dark-brand-color, 10%);
+        }
+    }
+}
+
 .project-tags {
     margin-top: $spacing-unit / 2;
 }
@@ -381,11 +433,58 @@
     display: inline-block;
     background-color: $brand-color;
     color: #ffffff;
-    padding: 12px 25px;
+    padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: darken($brand-color, 15%);
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
+
+/**
+ * Scroll-in animation
+ */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/**
+ * Back to Top Button
+ */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: inline-block;
+    background-color: $brand-color;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 24px;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
 
     &:hover {
         background-color: darken($brand-color, 15%);
