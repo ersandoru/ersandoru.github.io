@@ -1,0 +1,26 @@
+- name: ansible-collection-proxmox
+  url: https://github.com/ersandoru/ansible-collection-proxmox
+  description: "An Ansible Collection for managing Proxmox VE hosts, including tasks for managing VMs, containers, and storage."
+  tags:
+    - Ansible
+    - YAML
+
+- name: proxmox-pci-switcher
+  url: https://github.com/ersandoru/proxmox-pci-switcher
+  description: "A script to switch a PCI device (like a GPU) between two different virtual machines in Proxmox VE."
+  tags:
+    - Shell
+
+- name: ansible-role-pve-lxc-docker
+  url: https://github.com/ersandoru/ansible-role-pve-lxc-docker
+  description: "An Ansible role to automatically create a Proxmox LXC container with Docker and Portainer installed."
+  tags:
+    - Ansible
+    - YAML
+
+- name: dotfiles
+  url: https://github.com/ersandoru/dotfiles
+  description: "My personal dotfiles for quickly setting up a consistent development environment on a new machine."
+  tags:
+    - Shell
+    - VimL

@@ -1,0 +1,15 @@
+- name: Languages
+  items:
+    - Kotlin
+    - Java
+    - C#
+
+- name: Android
+  items:
+    - Android SDK
+    - Jetpack Compose
+    - Coroutines
+    - Dagger Hilt
+    - Retrofit
+    - MVVM
+    - Git

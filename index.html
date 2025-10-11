@@ -4,20 +4,88 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="profile">
+    <img src="{{ "/assets/profile.jpg" | relative_url }}" alt="{{ site.title }}" class="profile-picture">
+    <h1 class="profile-name">{{ site.title }}</h1>
+    <p class="profile-title">{{ site.job_title }}</p>
+    <p class="profile-location">{{ site.location }}</p>
+    <div class="profile-bio">
+        {% assign about_page = site.pages | where: "permalink", "/about/" | first %}
+        {{ about_page.content | markdownify }}
+    </div>
+  </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+  <div class="content-section">
+    <h2 class="section-heading">Skills</h2>
+    {% for skill_category in site.data.skills %}
+      <div class="skill-category">
+        <h3 class="skill-category-name">{{ skill_category.name }}</h3>
+        <div class="skill-tags">
+          {% for item in skill_category.items %}
+            <span class="skill-tag">{{ item }}</span>
+          {% endfor %}
+        </div>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <div class="content-section">
+    <h2 class="section-heading">Experience</h2>
+    <div class="experience-list">
+      {% for job in site.data.experience %}
+        <div class="experience-item">
+          <h3 class="experience-title">{{ job.title }}</h3>
+          <p class="experience-meta">{{ job.company }} | {{ job.period }}</p>
+          <p>{{ job.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">Education</h2>
+    <div class="education-list">
+      {% for edu in site.data.education %}
+        <div class="education-item">
+          <h3 class="education-institution">{{ edu.institution }}</h3>
+          <p class="education-meta">{{ edu.degree }}
+            {% if edu.period %} | {{ edu.period }}{% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">Projects</h2>
+    <div class="project-list">
+      {% for project in site.data.projects %}
+        <div class="project-item">
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+            <h3 class="project-title">{{ project.name }}</h3>
+          </a>
+          <p>{{ project.description }}</p>
+          {% if project.tags %}
+          <div class="project-tags">
+            {% for tag in project.tags %}
+              <span class="project-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">Contact Me</h2>
+    <div class="contact-section">
+        <p>The best way to reach me is by email. Whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
+        <div class="contact-buttons-wrapper">
+            <a href="mailto:{{ site.email }}" class="contact-button">Say Hello</a>
+            <a href="{{ "/assets/cv.pdf" | relative_url }}" class="contact-button" download>Download CV</a>
+        </div>
+    </div>
+  </div>
 
 </div>

@@ -1,0 +1,23 @@
+// _sass/_variables.scss
+
+//
+// FONTS
+//
+$base-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$heading-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+//
+// OVERRIDE THEME DEFAULTS
+//
+
+// A modern, dark teal palette
+$brand-color:         #008080; // Dark Teal
+
+$text-color:          #111;
+$background-color:    #fdfdfd;
+
+$grey-color:          #828282;
+$grey-color-light:    #e0e0e0;
+$grey-color-dark:     #333333;
+
+// Width of the main content area
+$content-width:       800px;

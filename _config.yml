@@ -1,10 +1,11 @@
 # Site settings
-title: Esper
+title: Ersan Doru
 email: ersandoru@gmail.com
+job_title: "Turkey Operation Technical Manager Leader at Kentkart"
+location: "Izmir, Turkey"
 description: > # this means to ignore newlines until "baseurl:"
-  Merhaba, 
-  Bu blog sitesi Android, C# ve diğer yazılım teknolojileri konusunda
-  paylaşımlarda bulunacağım bir blog sitesidir.
+  IT professional specializing in Public Transportation systems.
+  Passionate about science, technology, anime, and learning new languages.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://ersandoru.github.io" # the base hostname & protocol for your site
 twitter_username: ersandoru
