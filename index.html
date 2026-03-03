@@ -4,85 +4,101 @@ layout: default
 
 <div class="home">
 
-  <div class="profile">
-    <h1 class="profile-name">{{ site.title }}</h1>
-    <p class="profile-title">{{ site.job_title }}</p>
-    <p class="profile-location">{{ site.location }}</p>
-    <div class="profile-bio">
+  <section class="hero">
+    <div class="wrapper">
+      <h1 class="profile-name">{{ site.title }}</h1>
+      <p class="profile-title">{{ site.job_title }}</p>
+      <p class="profile-location">{{ site.location }}</p>
+      <div class="profile-bio">
         {% assign about_page = site.pages | where: "permalink", "/about/" | first %}
         {{ about_page.content | markdownify }}
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="content-section fade-in-section">
-    <h2 class="section-heading">Skills</h2>
-    <div class="skill-tags">
-      {% for skill_category in site.data.skills %}
-        <span class="skill-tag">{{ skill_category.name }}</span>
-      {% endfor %}
+  <section class="content-section" id="skills">
+    <div class="wrapper">
+      <h2 class="section-heading">Core Skills</h2>
+      <div class="skill-tags">
+        {% for skill_category in site.data.skills %}
+        {% unless skill_category.name == "Management & Leadership" %}
+        {% for skill in skill_category.items limit:3 %}
+        <span class="skill-tag">{{ skill.name }}</span>
+        {% endfor %}
+        {% endunless %}
+        {% endfor %}
+      </div>
+      <p style="text-align: center; margin-top: 40px;">
+        <a href="{{ '/skills/' | relative_url }}" class="contact-button secondary">Explore All Proficiencies &raquo;</a>
+      </p>
     </div>
-    <p style="text-align: center; margin-top: 20px;">
-      <a href="{{ '/skills/' | relative_url }}">View All Skills &raquo;</a>
-    </p>
-  </div>
+  </section>
 
-  <div class="content-section fade-in-section">
-    <h2 class="section-heading">Experience</h2>
-    <div class="experience-list">
-      {% for job in site.data.experience %}
+  <section class="content-section" id="experience">
+    <div class="wrapper">
+      <h2 class="section-heading">Career Timeline</h2>
+      <div class="experience-list">
+        {% for job in site.data.experience %}
         <div class="experience-item">
+          <div class="meta">{{ job.period }} • {{ job.company }}</div>
           <h3 class="experience-title">{{ job.title }}</h3>
-          <p class="experience-meta">{{ job.company }} | {{ job.period }}</p>
           <p>{{ job.description }}</p>
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="content-section fade-in-section">
-    <h2 class="section-heading">Education</h2>
-    <div class="education-list">
-      {% for edu in site.data.education %}
-        <div class="education-item">
-          <h3 class="education-institution">{{ edu.institution }}</h3>
-          <p class="education-meta">{{ edu.degree }}
-            {% if edu.period %} | {{ edu.period }}{% endif %}
-          </p>
+  <section class="content-section" id="education">
+    <div class="wrapper">
+      <h2 class="section-heading">Academic Profile</h2>
+      <div class="education-list">
+        {% for edu in site.data.education %}
+        <div class="card-item">
+          <div class="meta">{{ edu.period }}</div>
+          <h3 class="experience-institution">{{ edu.institution }}</h3>
+          <p>{{ edu.degree }}</p>
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="content-section fade-in-section">
-    <h2 class="section-heading">Projects</h2>
-    <div class="project-list">
-      {% for project in site.data.projects %}
+  <section class="content-section" id="projects">
+    <div class="wrapper">
+      <h2 class="section-heading">Featured Projects</h2>
+      <div class="project-list">
+        {% for project in site.data.projects %}
         <div class="project-item">
           <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
             <h3 class="project-title">{{ project.name }}</h3>
-          </a>
-          <p>{{ project.description }}</p>
-          {% if project.tags %}
-          <div class="project-tags">
-            {% for tag in project.tags %}
+            <p>{{ project.description }}</p>
+            {% if project.tags %}
+            <div class="project-tags">
+              {% for tag in project.tags %}
               <span class="project-tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-          {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+          </a>
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="content-section fade-in-section">
-    <h2 class="section-heading">Contact Me</h2>
-    <div class="contact-section">
-        <p>The best way to reach me is by email. Whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
+  <section class="content-section" id="contact">
+    <div class="wrapper">
+      <h2 class="section-heading">Let's Connect</h2>
+      <div class="contact-section">
+        <p>The best way to reach me is by email. Whether you have a question or just want to discuss technology, I'll do
+          my best to get back to you!</p>
         <div class="contact-buttons-wrapper">
-            <a href="mailto:{{ site.email }}" class="contact-button">Say Hello</a>
-            <a href="{{ "/assets/cv.pdf" | relative_url }}" class="contact-button" download>Download CV</a>
+          <a href="mailto:{{ site.email }}" class="contact-button">Get in Touch</a>
+          <a href="{{ " /assets/cv.pdf" | relative_url }}" class="contact-button secondary" download>Resume (PDF)</a>
         </div>
+      </div>
     </div>
-  </div>
+  </section>
 
 </div>

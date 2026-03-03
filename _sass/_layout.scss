@@ -1,494 +1,488 @@
 /**
- * Site header
+ * Premium Layout Styles
+ */
+
+body {
+    font-family: $base-font-family;
+    background-color: $background-color;
+    color: $text-color;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/**
+ * Site Header (Glassmorphic)
  */
 .site-header {
-    border-top: 2px solid $brand-color;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba($background-color, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid $grey-light;
+    transition: all 0.3s;
 }
 
 .site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
     display: flex;
     align-items: center;
     gap: 15px;
-    float: left;
+    font-weight: 700;
+    font-size: 20px;
+    color: $text-color;
+    text-decoration: none !important;
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
+    .profile-picture {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid $brand-color;
     }
-}
-.site-title span {
-    display: inline-block;
-}
-
-.dark-mode-toggle {
-    position: fixed;
-    bottom: 25px;
-    right: 90px; // Position it to the left of the back-to-top button
-    background-color: $brand-color;
-    border: none;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    border-radius: 50%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.836 17.836a.75.75 0 00-1.06-1.06l-1.59 1.59a.75.75 0 101.06 1.06l1.59-1.59zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.894 17.836a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25A.75.75 0 013 12zM6.106 6.106a.75.75 0 00-1.06-1.06l-1.59 1.59a.75.75 0 001.06 1.06l1.59-1.59z'/%3E%3C/svg%3E");
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: background-color 0.3s;
-
-    &:hover {
-        background-color: darken($brand-color, 15%);
-    }
-}
-
-.dark-mode .dark-mode-toggle {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath fill-rule='evenodd' d='M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.981A10.503 10.503 0 0118 18a10.5 10.5 0 01-10.5-10.5c0-1.562.337-3.045.952-4.384a.75.75 0 01.819-.162z' clip-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .site-nav {
-    float: right;
-    line-height: 56px;
-
-    .menu-icon {
-        display: none;
-    }
+    margin-left: auto;
+    display: flex;
+    gap: 30px;
 
     .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
+        color: $grey-dark;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
 
         &:hover {
             color: $brand-color;
-            text-decoration: underline;
         }
     }
-
 }
 
-
-
 /**
- * Site footer
+ * Hero Section
  */
-.site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+.hero {
+    padding: 100px 0 60px;
     text-align: center;
-}
+    position: relative;
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
-    display: none; // Hide the "Ersan Doru" and "Social" headings for a cleaner look
-}
+    &::before {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba($brand-color, 0.1) 0%, transparent 70%);
+        top: -100px;
+        left: -100px;
+        z-index: -1;
+    }
 
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+    .profile-name {
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, $brand-color, $accent-color);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-.footer-content-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-}
+    .profile-title {
+        font-size: 24px;
+        color: $grey-color;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
 
-/**
- * Page content
- */
-.page-content {
-    padding: $spacing-unit 0;
-}
+    .profile-location {
+        font-size: 18px;
+        color: $grey-color;
+        opacity: 0.8;
+    }
 
-.page-heading {
-    font-size: 20px;
-}
-
-/**
- * Profile on home page
- */
-.profile {
-    text-align: center;
-    margin: $spacing-unit * 2 0;
-}
-
-.profile-name {
-    font-size: 42px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.profile-picture {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid $grey-color-light;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0; // Prevent the image from being squeezed by other elements
-}
-
-.profile-title, .profile-location {
-    font-size: 20px;
-    color: $grey-color;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.profile-bio {
-    text-align: left;
-    line-height: 1.6;
+    .profile-bio {
+        max-width: 800px;
+        margin: 40px auto 0;
+        font-size: 19px;
+        line-height: 1.7;
+        text-align: center;
+        color: $grey-dark;
+    }
 }
 
 /**
- * Content Sections on home page
+ * Content Sections
  */
 .content-section {
-    margin: ($spacing-unit * 2) 0;
+    padding: 60px 0;
 }
 
 .section-heading {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: $spacing-unit;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
     text-align: center;
-    border-bottom: 1px solid $grey-color-light;
-    padding-bottom: $spacing-unit / 2;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: $brand-color;
+        border-radius: 2px;
+    }
 }
 
-.skill-category {
-    margin-bottom: $spacing-unit;
-    text-align: center;
-}
-
-.skill-category-name {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: $spacing-unit / 2;
-    color: $text-color;
-}
-
+/**
+ * Skills (Glassy Tags)
+ */
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
-    gap: 10px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .skill-tag {
-    background-color: #f0f0f0; // A light grey background
-    color: $grey-color-dark;
-    padding: 6px 14px;
-    border-radius: 15px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-weight: 600;
     font-size: 15px;
-    display: inline-block;
+    color: $grey-dark;
+    border: 1px solid $grey-light;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s;
+
+    &:hover {
+        transform: translateY(-3px);
+        border-color: $brand-color;
+        color: $brand-color;
+        box-shadow: 0 10px 20px rgba($brand-color, 0.1);
+    }
 }
 
-.skills-page .skill-category {
-    text-align: left;
-}
-
-.skills-page .skill-category-name {
-    text-align: left;
-    border-bottom: 1px solid $grey-color-light;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.skills-page .skill-tag-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #f8f8f8;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.skills-page .skill-endorsement {
-    font-size: 12px;
-    color: $grey-color;
-}
-
-.experience-list, .education-list {
-    margin-left: 0;
-}
-
-.project-list {
-    list-style: none;
-    margin-left: 0;
+/**
+ * Experience & Education (Timeline Cards)
+ */
+.experience-list,
+.education-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: $spacing-unit;
+    gap: 25px;
+    max-width: 850px;
+    margin: 0 auto;
 }
 
-.experience-item, .education-item {
-    margin-bottom: $spacing-unit;
+.experience-item,
+.card-item {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid $grey-light;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        border-color: rgba($brand-color, 0.3);
+    }
+
+    h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .meta {
+        font-weight: 600;
+        color: $brand-color;
+        margin-bottom: 12px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    p {
+        margin: 0;
+        color: $grey-color;
+        line-height: 1.6;
+    }
+}
+
+/**
+ * Projects (Visual Cards)
+ */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .project-item {
-    border: 1px solid $grey-color-light;
-    border-radius: 8px;
-    padding: $spacing-unit;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid $grey-light;
+    padding: 30px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border-color: $brand-color;
     }
-}
 
-.experience-title, .education-institution {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.project-item a {
-    text-decoration: none;
-    color: $grey-color-dark;
-}
-
-.project-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: $spacing-unit / 2;
-    &:hover {
-        color: $brand-color;
+    a {
         text-decoration: none;
-    }
-}
-
-.social-media-list .icon {
-    > svg {
-        width: 18px;
-        height: 18px;
-        vertical-align: middle;
-        path {
-            fill: $grey-color;
-            transition: fill 0.2s ease-in-out;
-        }
-    }
-    &:hover path {
-        fill: $brand-color;
-    }
-}
-
-
-//
-// DARK MODE STYLES
-//
-.dark-mode {
-    background-color: $dark-background-color;
-    color: $dark-text-color;
-
-    .site-header {
-        border-top-color: $dark-brand-color;
-        border-bottom-color: $dark-border-color;
+        color: inherit;
     }
 
-    .site-title span {
-        color: $dark-text-color;
+    .project-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        display: block;
     }
 
-    .site-title, .site-title:visited, .page-link {
-        color: $dark-text-color;
+    p {
+        font-size: 15px;
+        color: $grey-color;
+        flex-grow: 1;
     }
 
-    .page-link:hover {
-        color: $dark-brand-color;
-    }
-
-    .site-footer {
-        border-top-color: $dark-border-color;
-    }
-
-    .social-media-list .icon > svg path {
-        fill: $dark-grey-color;
-    }
-
-    .social-media-list .icon:hover path {
-        fill: $dark-brand-color;
-    }
-
-    .profile-picture {
-        border-color: $dark-border-color;
-    }
-
-    .profile-title, .profile-location, .experience-meta, .education-meta {
-        color: $dark-grey-color;
-    }
-
-    .section-heading {
-        border-bottom-color: $dark-border-color;
-    }
-
-    .skill-tag {
-        background-color: $dark-card-bg;
-        color: $dark-text-color;
-        border: 1px solid $dark-border-color;
-    }
-
-    .skills-page .skill-category-name {
-        border-bottom-color: $dark-border-color;
-    }
-
-    .skills-page .skill-tag-wrapper {
-        background-color: $dark-card-bg;
-        border: 1px solid $dark-border-color;
-    }
-
-    .project-item {
-        background-color: $dark-card-bg;
-        border-color: $dark-border-color;
-        box-shadow: none;
-    }
-
-    .project-item a, .project-title {
-        color: $dark-text-color;
-    }
-
-    .project-title:hover {
-        color: $dark-brand-color;
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
     }
 
     .project-tag {
-        background-color: lighten($dark-card-bg, 5%);
-        color: $dark-brand-color;
-    }
-
-    .contact-button {
-        background-color: $dark-brand-color;
-        color: $dark-background-color;
-        &:hover {
-            background-color: lighten($dark-brand-color, 10%);
-        }
-    }
-
-    .dark-mode-toggle {
-        background-color: $dark-brand-color;
-        &:hover {
-            background-color: lighten($dark-brand-color, 10%);
-        }
+        font-size: 12px;
+        padding: 4px 10px;
+        background: rgba($brand-color, 0.08);
+        color: $brand-color;
+        border-radius: 6px;
+        font-weight: 700;
     }
 }
 
-.project-tags {
-    margin-top: $spacing-unit / 2;
-}
-
-.project-tag {
-    display: inline-block;
-    background-color: lighten($brand-color, 45%);
-    color: darken($brand-color, 10%);
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: bold;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-.experience-meta, .education-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-    font-style: italic;
-    margin-bottom: $spacing-unit / 2;
-}
-
+/**
+ * Contact
+ */
 .contact-section {
     text-align: center;
-    font-size: 18px;
-    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+
+    p {
+        font-size: 18px;
+        color: $grey-color;
+        margin-bottom: 30px;
+    }
 }
 
 .contact-buttons-wrapper {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: $spacing-unit;
+    gap: 20px;
 }
 
 .contact-button {
-    display: inline-block;
-    background-color: $brand-color;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 35px;
+    border-radius: 100px;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.2s ease-in-out;
+    transition: all 0.3s;
+    background: $brand-color;
+    color: white;
+    box-shadow: 0 10px 20px rgba($brand-color, 0.2);
 
     &:hover {
-        background-color: darken($brand-color, 15%);
-        color: #ffffff;
-        text-decoration: none;
+        transform: translateY(-3px);
+        background: $brand-dark;
+        box-shadow: 0 15px 30px rgba($brand-color, 0.3);
+    }
+
+    &.secondary {
+        background: white;
+        color: $brand-color;
+        border: 2px solid $brand-color;
+        box-shadow: none;
+
+        &:hover {
+            background: rgba($brand-color, 0.05);
+        }
     }
 }
 
 /**
- * Scroll-in animation
+ * Dark Mode
  */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+.dark-mode {
+    background-color: $dark-bg;
+    color: $dark-text;
 
-.fade-in-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 80% 20%, rgba($accent-color, 0.05), transparent 40%),
+            radial-gradient(circle at 10% 80%, rgba($brand-color, 0.05), transparent 40%);
+        pointer-events: none;
+        z-index: -2;
+    }
+
+    .site-header {
+        background: rgba($dark-bg, 0.8);
+        border-bottom-color: $dark-border;
+    }
+
+    .site-title,
+    .page-link {
+        color: $dark-text;
+    }
+
+    .hero .profile-bio,
+    .hero .profile-title,
+    .hero .profile-location {
+        color: $dark-grey;
+    }
+
+    .skill-tag {
+        background: $dark-card-bg;
+        border-color: $dark-border;
+        color: $dark-text;
+    }
+
+    .experience-item,
+    .card-item,
+    .project-item {
+        background: $dark-card-bg;
+        border-color: $dark-border;
+        backdrop-filter: blur(10px);
+        color: $dark-text;
+
+        p {
+            color: $dark-grey;
+        }
+    }
+
+    .site-footer {
+        border-top-color: $dark-border;
+    }
 }
 
 /**
- * Back to Top Button
+ * Footer
  */
-.back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: inline-block;
-    background-color: $brand-color;
-    color: #ffffff;
-    width: 50px;
-    height: 50px;
+.site-footer {
+    padding: 60px 0;
+    border-top: 1px solid $grey-light;
     text-align: center;
-    border-radius: 50%;
-    line-height: 50px;
-    font-size: 24px;
-    text-decoration: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
 
-    &.visible {
-        opacity: 1;
-        visibility: visible;
+    .social-media-list {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style: none;
+        padding: 0;
     }
 
-    &:hover {
-        background-color: darken($brand-color, 15%);
-        color: #ffffff;
-        text-decoration: none;
+    .icon svg {
+        width: 24px;
+        height: 24px;
+        fill: $grey-color;
+        transition: all 0.3s;
+
+        &:hover {
+            fill: $brand-color;
+            transform: scale(1.2);
+        }
     }
 }
+
+/**
+ * Mobile Navigation
+ */
+.nav-trigger,
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hero .profile-name {
+        font-size: 40px;
+    }
+
+    .wrapper {
+        padding: 0 20px;
+    }
+
+    .site-nav {
+        gap: 15px;
+    }
+
+    .contact-buttons-wrapper {
+        flex-direction: column;
+    }
+}
+
+/**
+ * Floating UI elements
+ */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid $grey-light;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.dark-mode .dark-mode-toggle {
+    background: $dark-card-bg;
+    border-color: $dark-border;
+    color: white;
+}
+
+.back-to-top {
+    display: none;
+}
+
+// Let's keep it simple

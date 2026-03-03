@@ -3,28 +3,35 @@
 //
 // FONTS
 //
-$base-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$heading-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$base-font-family: "Outfit", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$heading-font-family: "Outfit", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
 //
-// OVERRIDE THEME DEFAULTS
+// COLOR PALETTE (Premium Deep Tech)
 //
+$brand-color:         #0ea5e9; // Vibrant sky blue
+$brand-light:         #38bdf8;
+$brand-dark:          #0284c7;
 
-// A modern, dark teal palette
-$brand-color:         #008080; // Dark Teal
+$accent-color:        #8b5cf6; // Modern violet
 
-$dark-background-color: #1c2128;
-$dark-text-color:       #cdd9e5;
-$dark-card-bg:          #22272e;
-$dark-border-color:     #373e47;
-$dark-brand-color:      #23c4c4; // Brighter teal for dark mode
-$dark-grey-color:       #909dab;
+$background-color:    #f8fafc;
+$text-color:          #0f172a; // Deep slate
+$grey-color:          #64748b;
+$grey-light:          #e2e8f0;
+$grey-dark:           #334155;
 
-$text-color:          #111;
-$background-color:    #fdfdfd;
-
-$grey-color:          #828282;
-$grey-color-light:    #e0e0e0;
-$grey-color-dark:     #333333;
+// DARK MODE
+$dark-bg:             #020617; // Deepest midnight
+$dark-card-bg:        rgba(30, 41, 59, 0.7); // Translucent slate
+$dark-text:           #f1f5f9;
+$dark-grey:           #94a3b8;
+$dark-border:         #1e293b;
+$dark-accent:         #a78bfa;
 
 // Width of the main content area
-$content-width:       800px;
+$content-width:       1000px;
+$spacing-unit:        30px;
+$base-line-height:    1.6;
+$base-font-size:      16px;
+$small-font-size:     14px;

@@ -7,85 +7,44 @@
     - name: Technology Management
     - name: Project Planning
     - name: Project Management
-      endorsements: 4
     - name: Software Project Management
-    - name: Coaching
     - name: Coaching & Mentoring
     - name: Team Building
     - name: Customer Satisfaction
     - name: Communication
     - name: Problem Solving
 
-- name: Methodologies & Tools
+- name: Systems & Virtualization
   items:
-    - name: Agile Methodologies
-    - name: Scrum
-    - name: JIRA
+    - name: Linux (Ubuntu/Debian)
+    - name: Proxmox VE
+    - name: High-Availability (HA)
+    - name: Docker
+    - name: Virtualization
+    - name: Windows Server
 
-- name: Languages & Scripting
+- name: Automation & DevOps
+  items:
+    - name: Ansible
+    - name: CI/CD
+    - name: Bash Scripting
+    - name: Monitoring & Telemetry
+    - name: Infrastructure as Code
+
+- name: Languages & Databases
   items:
     - name: C#
-      endorsements: 12
     - name: JavaScript
-      endorsements: 5
+    - name: SQL (MySQL/SQL Server)
     - name: Java
-      endorsements: 1
-    - name: SQL
-    - name: Bash
-    - name: Scripting
     - name: Scala
-    - name: WPF
-
-- name: Backend & Databases
-  items:
-    - name: MySQL
-      endorsements: 10
-    - name: MongoDB
-      endorsements: 3
-    - name: Microsoft SQL Server
-      endorsements: 3
-    - name: Apache Kafka
-    - name: Elasticsearch
     - name: Akka
-    - name: Protocol Buffers
-    - name: Telemetry
 
-- name: DevOps & Infrastructure
+- name: Engineering & IoT
   items:
-    - name: Linux
-      endorsements: 8
-    - name: Docker Products
-    - name: Virtualization
-    - name: Ubuntu
-    - name: Windows Server
-      endorsements: 1
-    - name: Apache
-      endorsements: 2
-    - name: IIS
-      endorsements: 2
-    - name: DNS management
-
-- name: Mobile & IoT
-  items:
-    - name: Android Development
-      endorsements: 4
-    - name: Mobile Devices
-      endorsements: 4
-    - name: Arduino
-      endorsements: 2
-    - name: M2M
-      endorsements: 1
-
-- name: Software Engineering
-  items:
-    - name: Programming
-      endorsements: 6
-    - name: Web Development
-      endorsements: 5
-    - name: Software Development
-      endorsements: 2
-    - name: Integration
-      endorsements: 2
     - name: Software Design
-      endorsements: 1
-    - name: Software Engineering
+    - name: System Integration
+    - name: IoT & M2M
+    - name: Arduino
+    - name: Protocol Buffers
+    - name: Android Development
