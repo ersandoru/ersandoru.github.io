@@ -1,7 +1,12 @@
-- title: Turkey Operation Technical Manager Leader
+- title: Technical Operations Lead & Engineering Manager
   company: Kentkart
-  period: Jul 2015 - Present
-  description: "Leading the field support engineering team for an IT company specializing in public transportation. Responsible for managing on-site technical operations, ensuring 24/7 system stability and high performance of smart card and ticketing solutions."
+  period: Jan 2023 - Present
+  description: "Directing technical operations and engineering teams for public transportation IT systems. Focused on site reliability engineering (SRE), 24/7 high-availability system stability, incident management, and technical leadership of payment and field operations."
+
+- title: Senior Software Development Team Lead
+  company: Kentkart
+  period: Jul 2015 - Jan 2023
+  description: "Led software development teams for smart transportation, electronic fare collection (AFC), and fleet management systems. Guided software architecture, modernization, and scaling of core transportation technologies."
 
 - title: Project Manager, R&D / Software Developer
   company: Vendeka Information Technologies
