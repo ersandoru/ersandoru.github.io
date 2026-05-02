@@ -1,10 +1,10 @@
 ---
 layout: null
-permalink: /cv/
-title: "Ersan Doru - Curriculum Vitae"
+permalink: /cv/kl/
+title: "Ersan Doru - batlh lI'moH"
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tlh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +19,9 @@ title: "Ersan Doru - Curriculum Vitae"
             --text-main: #1f2937;
             --text-muted: #4b5563;
             --text-light: #9ca3af;
-            --primary: #2563eb;
-            --primary-light: #dbeafe;
-            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --primary: #c53030; /* Klingon Red */
+            --primary-light: #fff5f5;
+            --primary-gradient: linear-gradient(135deg, #742a2a 0%, #c53030 100%);
             --white: #ffffff;
             --border: #e5e7eb;
             --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -94,7 +94,7 @@ title: "Ersan Doru - Curriculum Vitae"
         .profile-header h2 { 
             font-size: 1.1rem; 
             font-weight: 400; 
-            color: #bfdbfe; 
+            color: #fed7d7; 
             margin-bottom: 2.5rem; 
             font-family: 'Inter', sans-serif;
         }
@@ -137,7 +137,7 @@ title: "Ersan Doru - Curriculum Vitae"
         }
         
         .contact-info a:hover { 
-            color: #93c5fd; 
+            color: #feb2b2; 
         }
 
         .skills-section { 
@@ -161,7 +161,7 @@ title: "Ersan Doru - Curriculum Vitae"
             font-size: 0.95rem; 
             font-weight: 500; 
             margin-bottom: 0.8rem; 
-            color: #93c5fd; 
+            color: #feb2b2; 
             font-family: 'Inter', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -344,7 +344,7 @@ title: "Ersan Doru - Curriculum Vitae"
             border-radius: 50%;
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 15px -3px rgba(197, 48, 48, 0.4);
             transition: var(--transition);
             display: flex;
             align-items: center;
@@ -354,8 +354,34 @@ title: "Ersan Doru - Curriculum Vitae"
 
         .print-btn:hover {
             transform: translateY(-5px) scale(1.05);
-            background: #1d4ed8;
-            box-shadow: 0 15px 20px -3px rgba(37, 99, 235, 0.5);
+            background: #9b2c2c;
+            box-shadow: 0 15px 20px -3px rgba(197, 48, 48, 0.5);
+        }
+
+        /* Language Switcher Styles */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1001;
+        }
+        .lang-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 10px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        .lang-link:hover, .lang-link.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
         }
 
         /* Print Styles */
@@ -382,7 +408,7 @@ title: "Ersan Doru - Curriculum Vitae"
             .main-content { padding: 3rem 2.5rem; }
             .section { margin-bottom: 2rem; }
             .timeline-item { break-inside: avoid; }
-            .print-btn { display: none; }
+            .print-btn, .lang-switcher { display: none; }
             .skill-tag { border: 1px solid rgba(255,255,255,0.3); }
         }
 
@@ -401,41 +427,15 @@ title: "Ersan Doru - Curriculum Vitae"
             .timeline-date { margin-top: 0.5rem; align-self: flex-start; }
             body { padding: 1rem; }
         }
-    <style>
-        /* Language Switcher Styles */
-        .lang-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 1001;
-        }
-        .lang-link {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 5px 10px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            transition: var(--transition);
-        }
-        .lang-link:hover, .lang-link.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        @media print { .lang-switcher { display: none; } }
     </style>
 </head>
 <body>
     <div class="lang-switcher">
-        <a href="{{ '/cv/' | relative_url }}" class="lang-link active">EN</a>
-        <a href="{{ '/cv/kl/' | relative_url }}" class="lang-link">KL</a>
+        <a href="{{ '/cv/' | relative_url }}" class="lang-link">EN</a>
+        <a href="{{ '/cv/kl/' | relative_url }}" class="lang-link active">KL</a>
         <a href="{{ '/cv/el/' | relative_url }}" class="lang-link">EL</a>
     </div>
+
     <button class="print-btn" onclick="window.print()" title="Print CV / Save as PDF">
         <i class="fas fa-print"></i>
     </button>
@@ -472,7 +472,7 @@ title: "Ersan Doru - Curriculum Vitae"
             </div>
 
             <div class="skills-section">
-                <h3>Expertise</h3>
+                <h3>laH (Expertise)</h3>
                 {% for category in site.data.skills %}
                 <div class="skill-group">
                     <h4>{{ category.name }}</h4>
@@ -489,7 +489,7 @@ title: "Ersan Doru - Curriculum Vitae"
         <!-- Main Content -->
         <div class="main-content">
             <div class="section">
-                <h2 class="section-title"><i class="fas fa-user"></i> Professional Profile</h2>
+                <h2 class="section-title"><i class="fas fa-user"></i> ghojwI' lI'moH (Profile)</h2>
                 <div class="about-text">
                     {% assign about_page = site.pages | where: "permalink", "/about/" | first %}
                     {% if about_page %}
@@ -501,7 +501,7 @@ title: "Ersan Doru - Curriculum Vitae"
             </div>
 
             <div class="section">
-                <h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> vumta'ghach (Work)</h2>
                 <div class="timeline">
                     {% for job in site.data.experience %}
                     <div class="timeline-item">
@@ -519,7 +519,7 @@ title: "Ersan Doru - Curriculum Vitae"
             </div>
 
             <div class="section">
-                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> ghojta'ghach (Learning)</h2>
                 <div class="timeline">
                     {% for edu in site.data.education %}
                     <div class="timeline-item">
@@ -536,7 +536,7 @@ title: "Ersan Doru - Curriculum Vitae"
             </div>
 
             <div class="section" style="margin-bottom: 0;">
-                <h2 class="section-title"><i class="fas fa-rocket"></i> My Projects</h2>
+                <h2 class="section-title"><i class="fas fa-rocket"></i> Qu'meywIj (Missions)</h2>
                 <div class="timeline">
                     {% for project in site.data.projects %}
                     <div class="timeline-item">
