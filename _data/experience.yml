@@ -1,12 +1,22 @@
-- title: Technical Operations Lead & Engineering Manager
+- title: Technical Operations Manager – Türkiye
   company: Kentkart
-  period: Jan 2023 - Present
-  description: "Directing technical operations and engineering teams for public transportation IT systems. Focused on site reliability engineering (SRE), 24/7 high-availability system stability, incident management, and technical leadership of payment and field operations."
+  period: Jul 2024 - Present
+  description: "Responsible for leading nationwide technical operations for mission-critical public transportation systems across Türkiye. Coordinates software, database, infrastructure, and field engineering teams to ensure end-to-end reliability of payment and validation platforms. Manages 24/7 operations, incident management, and acts as the technical escalation point for R&D."
 
-- title: Senior Software Development Team Lead
-  company: Kentkart
-  period: Jul 2015 - Jan 2023
-  description: "Led software development teams for smart transportation, electronic fare collection (AFC), and fleet management systems. Guided software architecture, modernization, and scaling of core transportation technologies."
+- title: Field Application Engineering Senior Team Leader
+  company: Kentkart Ege Elektronik A.S.
+  period: 2022 – 2024 July
+  description: "Analyzed operational issues, collaborated with R&D for problem-solving, and developed internal tools to prevent recurrence of systemic issues. Focused on permanent resolutions and optimizing the support lifecycle."
+
+- title: Project Team Leader
+  company: Kentkart Ege Elektronik A.S.
+  period: 2016 – 2022
+  description: "Managed domestic project installation processes and coordinated with customers to align post-installation needs. Led and guided project engineers, ensuring operational expectations were met across multiple regions."
+
+- title: Project Engineer
+  company: Kentkart Ege Elektronik A.S.
+  period: 2015 – 2016
+  description: "Overseas domestic project installations and requirements gathering. Maintained clear communication between customers and internal teams to ensure successful project execution."
 
 - title: Project Manager, R&D / Software Developer
   company: Vendeka Information Technologies
