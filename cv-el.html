@@ -364,24 +364,30 @@ title: "Ersan Doru - Mentad"
             top: 20px;
             right: 20px;
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            gap: 8px;
             z-index: 1001;
+            align-items: flex-end;
         }
         .lang-link {
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            padding: 5px 10px;
+            padding: 6px 15px;
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 5px;
+            border-radius: 8px;
             transition: var(--transition);
+            min-width: 140px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         .lang-link:hover, .lang-link.active {
             background: var(--primary);
             color: var(--white);
             border-color: var(--primary);
+            transform: translateX(-5px);
         }
 
         /* Print Styles */
@@ -431,9 +437,10 @@ title: "Ersan Doru - Mentad"
 </head>
 <body>
     <div class="lang-switcher">
-        <a href="{{ '/cv/' | relative_url }}" class="lang-link">EN</a>
-        <a href="{{ '/cv/kl/' | relative_url }}" class="lang-link">KL</a>
-        <a href="{{ '/cv/el/' | relative_url }}" class="lang-link active">EL</a>
+        <a href="{{ '/cv/' | relative_url }}" class="lang-link">English</a>
+        <a href="{{ '/cv/tr/' | relative_url }}" class="lang-link">Türkçe</a>
+        <a href="{{ '/cv/kl/' | relative_url }}" class="lang-link">Klingon</a>
+        <a href="{{ '/cv/el/' | relative_url }}" class="lang-link active">Elvish (Sindarin)</a>
     </div>
 
     <button class="print-btn" onclick="window.print()" title="Print CV / Save as PDF">

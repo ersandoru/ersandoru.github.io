@@ -1,15 +1,15 @@
 ---
 layout: null
-permalink: /cv/
-title: "Ersan Doru - Curriculum Vitae"
+permalink: /cv/tr/
+title: "Ersan Doru - Özgeçmiş"
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <meta name="description" content="Professional CV of {{ site.title }} - {{ site.job_title }}">
+    <meta name="description" content="{{ site.title }} - {{ site.job_title }} Profesyonel Özgeçmişi">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -358,50 +358,6 @@ title: "Ersan Doru - Curriculum Vitae"
             box-shadow: 0 15px 20px -3px rgba(37, 99, 235, 0.5);
         }
 
-        /* Print Styles */
-        @media print {
-            @page { margin: 0; size: A4; }
-            body { 
-                padding: 0; 
-                background: var(--white); 
-                font-size: 11pt;
-            }
-            .cv-wrapper { 
-                box-shadow: none; 
-                max-width: 100%; 
-                border-radius: 0; 
-                grid-template-columns: 280px 1fr; 
-                animation: none;
-                min-height: 100vh;
-            }
-            .sidebar { 
-                padding: 3rem 2rem; 
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .main-content { padding: 3rem 2.5rem; }
-            .section { margin-bottom: 2rem; }
-            .timeline-item { break-inside: avoid; }
-            .print-btn { display: none; }
-            .skill-tag { border: 1px solid rgba(255,255,255,0.3); }
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 992px) {
-            .cv-wrapper { grid-template-columns: 1fr; }
-            .sidebar { padding: 3rem 2rem; }
-            .main-content { padding: 3rem 2rem; }
-            .contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-            .contact-info .contact-item { margin-bottom: 0; }
-        }
-        
-        @media screen and (max-width: 640px) {
-            .contact-info { grid-template-columns: 1fr; }
-            .timeline-header { flex-direction: column; }
-            .timeline-date { margin-top: 0.5rem; align-self: flex-start; }
-            body { padding: 1rem; }
-        }
-    <style>
         /* Language Switcher Styles */
         .lang-switcher {
             position: absolute;
@@ -433,17 +389,61 @@ title: "Ersan Doru - Curriculum Vitae"
             border-color: var(--primary);
             transform: translateX(-5px);
         }
-        @media print { .lang-switcher { display: none; } }
+
+        /* Print Styles */
+        @media print {
+            @page { margin: 0; size: A4; }
+            body { 
+                padding: 0; 
+                background: var(--white); 
+                font-size: 11pt;
+            }
+            .cv-wrapper { 
+                box-shadow: none; 
+                max-width: 100%; 
+                border-radius: 0; 
+                grid-template-columns: 280px 1fr; 
+                animation: none;
+                min-height: 100vh;
+            }
+            .sidebar { 
+                padding: 3rem 2rem; 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .main-content { padding: 3rem 2.5rem; }
+            .section { margin-bottom: 2rem; }
+            .timeline-item { break-inside: avoid; }
+            .print-btn, .lang-switcher { display: none; }
+            .skill-tag { border: 1px solid rgba(255,255,255,0.3); }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 992px) {
+            .cv-wrapper { grid-template-columns: 1fr; }
+            .sidebar { padding: 3rem 2rem; }
+            .main-content { padding: 3rem 2rem; }
+            .contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .contact-info .contact-item { margin-bottom: 0; }
+        }
+        
+        @media screen and (max-width: 640px) {
+            .contact-info { grid-template-columns: 1fr; }
+            .timeline-header { flex-direction: column; }
+            .timeline-date { margin-top: 0.5rem; align-self: flex-start; }
+            body { padding: 1rem; }
+        }
     </style>
 </head>
 <body>
     <div class="lang-switcher">
-        <a href="{{ '/cv/' | relative_url }}" class="lang-link active">English</a>
-        <a href="{{ '/cv/tr/' | relative_url }}" class="lang-link">Türkçe</a>
+        <a href="{{ '/cv/' | relative_url }}" class="lang-link">English</a>
+        <a href="{{ '/cv/tr/' | relative_url }}" class="lang-link active">Türkçe</a>
         <a href="{{ '/cv/kl/' | relative_url }}" class="lang-link">Klingon</a>
         <a href="{{ '/cv/el/' | relative_url }}" class="lang-link">Elvish (Sindarin)</a>
     </div>
-    <button class="print-btn" onclick="window.print()" title="Print CV / Save as PDF">
+
+    <button class="print-btn" onclick="window.print()" title="Yazdır / PDF Kaydet">
         <i class="fas fa-print"></i>
     </button>
 
@@ -452,7 +452,7 @@ title: "Ersan Doru - Curriculum Vitae"
         <div class="sidebar">
             <div class="profile-header">
                 <h1>{{ site.title }}</h1>
-                <h2>{{ site.job_title }}</h2>
+                <h2>Türkiye Operasyon Teknik Yönetici Lideri</h2>
             </div>
             
             <div class="contact-info">
@@ -479,7 +479,7 @@ title: "Ersan Doru - Curriculum Vitae"
             </div>
 
             <div class="skills-section">
-                <h3>Expertise</h3>
+                <h3>Uzmanlık</h3>
                 {% for category in site.data.skills %}
                 <div class="skill-group">
                     <h4>{{ category.name }}</h4>
@@ -496,54 +496,87 @@ title: "Ersan Doru - Curriculum Vitae"
         <!-- Main Content -->
         <div class="main-content">
             <div class="section">
-                <h2 class="section-title"><i class="fas fa-user"></i> Professional Profile</h2>
+                <h2 class="section-title"><i class="fas fa-user"></i> Profesyonel Profil</h2>
                 <div class="about-text">
-                    {% assign about_page = site.pages | where: "permalink", "/about/" | first %}
-                    {% if about_page %}
-                        {{ about_page.content | markdownify }}
-                    {% else %}
-                        <p>{{ site.description }}</p>
-                    {% endif %}
+                    <p>Kentkart'ta, akıllı kart ve toplu taşıma için biletleme çözümlerinde küresel bir lider olan <b>Türkiye Operasyon Teknik Yönetici Lideri</b> olarak görev yapmaktayım. 2005 yılında başlayan BT sektörü yolculuğumda, yazılım geliştirme, yüksek erişilebilirlikli sunucu altyapıları ve karmaşık veritabanı yönetimi konularında derin uzmanlık kazandım.</p>
+                    <p>Kariyerim boyunca AR-GE girişimlerine liderlik etme, büyük ölçekli teknik projeleri yönetme ve kritik sistemler tasarlama ayrıcalığına sahip oldum. Odak noktam, 7/24 kesintisiz çalışan, esnek ve yüksek performanslı çözümler sunmaktır.</p>
+                    <p>Müşteri beklentilerini aşan, yüksek kaliteli ve güvenilir teknolojik çözümler sunma misyonuyla hareket ediyorum. Bilim ve teknolojinin kesişme noktasına tutkuyla bağlıyım ve her zaman altyapı otomasyonu için Ansible ve Proxmox'tan modern geliştirme çerçevelerine kadar yeni araçları keşfetmekteyim.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> İş Deneyimi</h2>
                 <div class="timeline">
-                    {% for job in site.data.experience %}
                     <div class="timeline-item">
                         <div class="timeline-header">
                             <div>
-                                <span class="timeline-title">{{ job.title }}</span>
-                                <span class="timeline-company">{{ job.company }}</span>
+                                <span class="timeline-title">Türkiye Operasyon Teknik Yönetici Lideri</span>
+                                <span class="timeline-company">Kentkart</span>
                             </div>
-                            <span class="timeline-date">{{ job.period }}</span>
+                            <span class="timeline-date">Tem 2015 - Günümüz</span>
                         </div>
-                        <p class="timeline-desc">{{ job.description }}</p>
+                        <p class="timeline-desc">Toplu taşıma odaklı bilişim firmasında saha destek mühendisliği ekibine liderlik ediyorum. Akıllı kart ve biletleme çözümlerinin 7/24 sistem kararlılığını ve yüksek performansını sağlayarak saha teknik operasyonlarını yönetiyorum.</p>
                     </div>
-                    {% endfor %}
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="timeline-title">Proje Müdürü, AR-GE / Yazılım Geliştirici</span>
+                                <span class="timeline-company">Vendeka Bilgi Teknolojileri</span>
+                            </div>
+                            <span class="timeline-date">2012 - 2015</span>
+                        </div>
+                        <p class="timeline-desc">Yenilikçi sistemler ve proje yaşam döngüsü yönetimine odaklanarak bilişim teknolojileri için AR-GE projelerini yönettim ve yazılım çözümleri geliştirdim.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="timeline-title">Kurucu</span>
+                                <span class="timeline-company">Enki Yazılım</span>
+                            </div>
+                            <span class="timeline-date">Oca 2011 - Ara 2011</span>
+                        </div>
+                        <p class="timeline-desc">Özel uygulamalar ve teknik danışmanlık hizmetleri sunan bir yazılım geliştirme şirketi kurdum ve yönettim.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Eğitim</h2>
                 <div class="timeline">
-                    {% for edu in site.data.education %}
                     <div class="timeline-item">
                         <div class="timeline-header">
                             <div>
-                                <span class="timeline-title">{{ edu.degree }}</span>
-                                <span class="timeline-company">{{ edu.institution }}</span>
+                                <span class="timeline-title">Lisans, Yönetim Bilişim Sistemleri</span>
+                                <span class="timeline-company">Anadolu Üniversitesi</span>
                             </div>
-                            <span class="timeline-date">{{ edu.period }}</span>
+                            <span class="timeline-date">2015 - 2018</span>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="timeline-title">Lisans, Matematik</span>
+                                <span class="timeline-company">Mimar Sinan Güzel Sanatlar Üniversitesi</span>
+                            </div>
+                            <span class="timeline-date">2000 - 2006</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="timeline-title">Lise</span>
+                                <span class="timeline-company">60. Yıl Anadolu Lisesi</span>
+                            </div>
+                            <span class="timeline-date">1994 - 1999</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="section" style="margin-bottom: 0;">
-                <h2 class="section-title"><i class="fas fa-rocket"></i> My Projects</h2>
+                <h2 class="section-title"><i class="fas fa-rocket"></i> Projelerim</h2>
                 <div class="timeline">
                     {% for project in site.data.projects %}
                     <div class="timeline-item">
@@ -554,7 +587,22 @@ title: "Ersan Doru - Curriculum Vitae"
                                 </a>
                             </div>
                         </div>
-                        <p class="timeline-desc" style="margin-top: 0.3rem;">{{ project.description }}</p>
+                        <p class="timeline-desc" style="margin-top: 0.3rem;">
+                            {% if project.name == "akil-oyunlari" %}Akıllı bot destekli, modern web tabanlı zeka ve strateji oyunları platformu.
+                            {% elsif project.name == "servmobil" %}NestJS, Angular ve PostgreSQL tabanlı modüler okul/servis taşımacılığı ERP sistemi.
+                            {% elsif project.name == "tabularis" %}Psikolojik ölçek yönetimi, anket oluşturma ve veri analizi için modern web uygulaması.
+                            {% elsif project.name == "OracleToolBox" %}Oracle veritabanı yönetimi ve SQL işlemleri için gelişmiş araç seti.
+                            {% elsif project.name == "ValidatorServices" %}Veri doğrulama ve işleme için mikroservis mimarili arka uç hizmetleri.
+                            {% elsif project.name == "Kripto" %}Veri güvenliği ve şifreleme algoritmaları üzerine çalışmalar içeren modül.
+                            {% elsif project.name == "Opmon" %}Gelişmiş operasyonel izleme ve alarm yönetim paneli.
+                            {% elsif project.name == "Eticaret" %}Modern ve ölçeklenebilir e-ticaret altyapısı çözümü.
+                            {% elsif project.name == "Abis" %}Akıllı binalar ve otomasyon sistemleri için yönetim yazılımı.
+                            {% elsif project.name == "Duyuru" %}Kurumsal duyuru ve iç iletişim yönetim platformu.
+                            {% elsif project.name == "Enki_Gedik" %}Gedik Üniversitesi için geliştirilen özel yazılım projesi.
+                            {% elsif project.name == "Gaziantep_Belediye" %}Gaziantep Belediyesi için geliştirilen toplu taşıma veya kurumsal veri yönetim sistemleri.
+                            {% elsif project.name == "OracleDBA" %}Kapsamlı veritabanı yönetimi ve performans optimizasyon araçları.
+                            {% else %}{{ project.description }}{% endif %}
+                        </p>
                     </div>
                     {% endfor %}
                 </div>
