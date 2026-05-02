@@ -402,46 +402,56 @@ title: "Ersan Doru - Curriculum Vitae"
             body { padding: 1rem; }
         }
 
-        /* Language Switcher Styles */
         .lang-switcher {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 30px;
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 5px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             z-index: 1001;
-            align-items: flex-end;
         }
         .lang-link {
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            padding: 6px 15px;
-            background: var(--white);
-            border: 1px solid var(--border);
+            padding: 8px 16px;
             border-radius: 8px;
             transition: var(--transition);
-            min-width: 140px;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
         }
-        .lang-link:hover, .lang-link.active {
+        .lang-link:hover {
+            color: var(--primary);
+            background: rgba(0, 0, 0, 0.03);
+        }
+        .lang-link.active {
             background: var(--primary);
             color: var(--white);
-            border-color: var(--primary);
-            transform: translateX(-5px);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
         }
         @media print { .lang-switcher { display: none; } }
+        @media screen and (max-width: 768px) {
+            .lang-switcher { 
+                position: relative; 
+                top: 0; right: 0; 
+                margin-bottom: 20px;
+                justify-content: center;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="lang-switcher">
-        <a href="{{ '/cv/' | relative_url }}" class="lang-link active">English</a>
-        <a href="{{ '/cv/tr/' | relative_url }}" class="lang-link">Türkçe</a>
-        <a href="{{ '/cv/kl/' | relative_url }}" class="lang-link">Klingon</a>
-        <a href="{{ '/cv/el/' | relative_url }}" class="lang-link">Elvish (Sindarin)</a>
+        <a href="{{ '/cv/' | relative_url }}" class="lang-link active">EN</a>
+        <a href="{{ '/cv/tr/' | relative_url }}" class="lang-link">TR</a>
+        <a href="{{ '/cv/kl/' | relative_url }}" class="lang-link">KL</a>
+        <a href="{{ '/cv/el/' | relative_url }}" class="lang-link">EL</a>
     </div>
     <button class="print-btn" onclick="window.print()" title="Print CV / Save as PDF">
         <i class="fas fa-print"></i>
@@ -455,11 +465,17 @@ title: "Ersan Doru - Curriculum Vitae"
                 <h2>{{ site.job_title }}</h2>
             </div>
             
-            <div class="contact-info">
+                <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i> 
                     <a href="mailto:{{ site.email }}">{{ site.email }}</a>
                 </div>
+                {% if site.phone %}
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i> 
+                    <a href="tel:{{ site.phone | replace: ' ', '' }}">{{ site.phone }}</a>
+                </div>
+                {% endif %}
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i> 
                     <span>{{ site.location }}</span>
