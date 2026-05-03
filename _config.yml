@@ -12,6 +12,7 @@ url: "http://ersandoru.github.io" # the base hostname & protocol for your site
 twitter_username: ersandoru
 github_username:  ersandoru
 linkedin_username: ersandoru
+steam_username: ersandoru
 
 # Build settings
 markdown: kramdown
