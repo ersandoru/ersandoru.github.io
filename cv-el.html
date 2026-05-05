@@ -408,52 +408,67 @@ title: "Ersan Doru - Mentad"
             body { 
                 padding: 0; 
                 background: var(--white); 
-                font-size: 9.5pt;
+                font-size: 9pt;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+            /* Create a persistent sidebar background on all pages */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 260px;
+                height: 100%;
+                background: #1e3a8a !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                z-index: -1;
             }
             .cv-wrapper { 
                 box-shadow: none; 
                 max-width: 100%; 
                 border-radius: 0; 
-                display: grid;
-                grid-template-columns: 280px 1fr;
+                display: block;
                 overflow: visible !important;
                 animation: none;
+                background: transparent !important;
             }
             .sidebar { 
-                padding: 2.5rem 1.5rem; 
-                background: var(--primary-gradient) !important;
+                float: left;
+                width: 260px;
+                padding: 2rem 1.2rem; 
+                background: transparent !important;
                 color: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                min-height: 100vh;
+                position: relative;
             }
             .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar a, .sidebar span {
                 color: white !important;
             }
             .main-content { 
-                padding: 2.5rem 3rem; 
+                margin-left: 260px;
+                padding: 2.5rem; 
                 overflow: visible !important;
                 background: white !important;
+                min-height: 100vh;
             }
             .section { 
-                margin-bottom: 2rem; 
+                margin-bottom: 1.5rem; 
                 break-inside: avoid;
             }
             .timeline-item { 
                 break-inside: avoid; 
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
             }
             .print-btn, .lang-switcher { display: none !important; }
             
             /* Compact skills for print */
-            .skill-group { margin-bottom: 1rem !important; }
-            .skill-tags { gap: 4px !important; }
+            .skill-group { margin-bottom: 0.8rem !important; }
+            .skill-tags { gap: 3px !important; }
             .skill-tag { 
-                padding: 2px 8px !important; 
-                font-size: 8pt !important;
-                border: 1px solid rgba(255,255,255,0.4) !important;
+                padding: 1px 6px !important; 
+                font-size: 7.5pt !important;
+                border: 1px solid rgba(255,255,255,0.3) !important;
                 background: rgba(255,255,255,0.1) !important;
                 color: white !important;
             }
