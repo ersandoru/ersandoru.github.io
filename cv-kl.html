@@ -404,11 +404,11 @@ title: "Ersan Doru - batlh lI'moH"
 
         /* Print Styles */
         @media print {
-            @page { margin: 1cm; size: A4; }
+            @page { margin: 0; size: A4; }
             body { 
                 padding: 0; 
                 background: var(--white); 
-                font-size: 10pt;
+                font-size: 9.5pt;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -416,39 +416,46 @@ title: "Ersan Doru - batlh lI'moH"
                 box-shadow: none; 
                 max-width: 100%; 
                 border-radius: 0; 
-                display: block;
+                display: grid;
+                grid-template-columns: 280px 1fr;
                 overflow: visible !important;
                 animation: none;
             }
             .sidebar { 
-                width: 100%;
-                padding: 2rem; 
+                padding: 2.5rem 1.5rem; 
                 background: var(--primary-gradient) !important;
                 color: white !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                min-height: 100vh;
             }
             .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar a, .sidebar span {
                 color: white !important;
             }
             .main-content { 
-                width: 100%;
-                padding: 2rem; 
+                padding: 2.5rem 3rem; 
                 overflow: visible !important;
+                background: white !important;
             }
             .section { 
-                margin-bottom: 1.5rem; 
+                margin-bottom: 2rem; 
                 break-inside: avoid;
             }
             .timeline-item { 
                 break-inside: avoid; 
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
             .print-btn, .lang-switcher { display: none !important; }
+            
+            /* Compact skills for print */
+            .skill-group { margin-bottom: 1rem !important; }
+            .skill-tags { gap: 4px !important; }
             .skill-tag { 
-                border: 1px solid #ccc !important; 
-                color: #333 !important;
-                background: #f0f0f0 !important;
+                padding: 2px 8px !important; 
+                font-size: 8pt !important;
+                border: 1px solid rgba(255,255,255,0.4) !important;
+                background: rgba(255,255,255,0.1) !important;
+                color: white !important;
             }
         }
 
