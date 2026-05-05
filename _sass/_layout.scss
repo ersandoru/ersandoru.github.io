@@ -381,7 +381,12 @@ body {
 
     .site-title,
     .page-link {
-        color: $dark-text;
+        color: $dark-text !important;
+    }
+
+    .site-nav {
+        background: none !important;
+        border: none !important;
     }
 
     .hero .profile-bio,
@@ -473,9 +478,19 @@ body {
     }
 
     .site-nav {
+        position: static !important;
         margin-left: 0;
         width: 100%;
+        display: flex;
         justify-content: center;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 10px 0 !important;
+    }
+
+    .site-nav .page-link {
+        padding: 5px 10px;
     }
 
     .hero .profile-name {
