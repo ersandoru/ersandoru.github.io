@@ -404,30 +404,52 @@ title: "Ersan Doru - Mentad"
 
         /* Print Styles */
         @media print {
-            @page { margin: 0; size: A4; }
+            @page { margin: 1cm; size: A4; }
             body { 
                 padding: 0; 
                 background: var(--white); 
-                font-size: 11pt;
+                font-size: 10pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             .cv-wrapper { 
                 box-shadow: none; 
                 max-width: 100%; 
                 border-radius: 0; 
-                grid-template-columns: 280px 1fr; 
+                display: block;
+                overflow: visible !important;
                 animation: none;
-                min-height: 100vh;
             }
             .sidebar { 
-                padding: 3rem 2rem; 
+                width: 100%;
+                padding: 2rem; 
+                background: var(--primary-gradient) !important;
+                color: white !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            .main-content { padding: 3rem 2.5rem; }
-            .section { margin-bottom: 2rem; }
-            .timeline-item { break-inside: avoid; }
-            .print-btn, .lang-switcher { display: none; }
-            .skill-tag { border: 1px solid rgba(255,255,255,0.3); }
+            .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar a, .sidebar span {
+                color: white !important;
+            }
+            .main-content { 
+                width: 100%;
+                padding: 2rem; 
+                overflow: visible !important;
+            }
+            .section { 
+                margin-bottom: 1.5rem; 
+                break-inside: avoid;
+            }
+            .timeline-item { 
+                break-inside: avoid; 
+                margin-bottom: 1rem;
+            }
+            .print-btn, .lang-switcher { display: none !important; }
+            .skill-tag { 
+                border: 1px solid #ccc !important; 
+                color: #333 !important;
+                background: #f0f0f0 !important;
+            }
         }
 
         /* Responsive */
