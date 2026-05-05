@@ -16,7 +16,7 @@
 
 - name: Systems & Virtualization
   items:
-    - name: Linux (Ubuntu/Debian)
+    - name: Linux
     - name: Proxmox VE
     - name: High-Availability (HA)
     - name: Docker
@@ -33,6 +33,7 @@
 
 - name: Languages & Databases
   items:
+    - name: C
     - name: C#
     - name: JavaScript
     - name: SQL (MySQL/SQL Server)

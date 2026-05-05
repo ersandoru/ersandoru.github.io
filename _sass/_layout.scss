@@ -2,6 +2,19 @@
  * Premium Layout Styles
  */
 
+:root {
+    --brand-color: #{$brand-color};
+    --brand-light: #{$brand-light};
+    --brand-dark: #{$brand-dark};
+    --accent-color: #{$accent-color};
+    --background-color: #{$background-color};
+    --text-color: #{$text-color};
+    --grey-color: #{$grey-color};
+    --grey-light: #{$grey-light};
+    --grey-dark: #{$grey-dark};
+}
+
+
 body {
     font-family: $base-font-family;
     background-color: $background-color;
@@ -339,6 +352,12 @@ body {
  * Dark Mode
  */
 .dark-mode {
+    --background-color: #{$dark-bg};
+    --text-color: #{$dark-text};
+    --grey-color: #{$dark-grey};
+    --grey-light: #{$dark-border};
+    --grey-dark: #{$dark-text};
+
     background-color: $dark-bg;
     color: $dark-text;
 
@@ -379,14 +398,22 @@ body {
 
     .experience-item,
     .card-item,
-    .project-item {
+    .project-item,
+    .post,
+    .skills-page {
         background: $dark-card-bg;
         border-color: $dark-border;
         backdrop-filter: blur(10px);
         color: $dark-text;
+        padding: 30px;
+        border-radius: 24px;
 
-        p {
+        p, .section-description, .skill-category-name {
             color: $dark-grey;
+        }
+
+        h1, h2, h3 {
+            color: $dark-text;
         }
     }
 
@@ -433,6 +460,24 @@ body {
 }
 
 @media (max-width: 768px) {
+    .site-header {
+        height: auto;
+        min-height: 80px;
+        padding: 15px 0;
+    }
+
+    .site-header .wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .site-nav {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
     .hero .profile-name {
         font-size: 40px;
     }

@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am the **Turkey Operation Technical Manager Leader at Kentkart**, a global leader in smart card and ticketing solutions for public transportation. With a professional journey in the IT sector that began in 2005, I have cultivated deep expertise in software development, high-availability server infrastructures, and complex database management.
+I am the **Turkey Region Technical Manager at Kentkart**, a global leader in smart card and ticketing solutions for public transportation. With a professional journey in the IT sector that began in 2005, I have cultivated deep expertise in software development, high-availability server infrastructures, and complex database management.
 
 Throughout my career, I've had the privilege of leading R&D initiatives, managing large-scale technical projects, and designing mission-critical systems. My focus is on delivering resilient, high-performance solutions that operate 24/7.
 
