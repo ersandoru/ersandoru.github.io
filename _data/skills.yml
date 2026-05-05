@@ -17,7 +17,6 @@
 - name: Systems & Virtualization
   items:
     - name: Linux
-    - name: Proxmox VE
     - name: High-Availability (HA)
     - name: Docker
     - name: Virtualization

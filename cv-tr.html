@@ -523,17 +523,13 @@ title: "Ersan Doru - Özgeçmiş"
         <div class="sidebar">
             <div class="profile-header">
                 <h1>{{ site.title }}</h1>
-                <h2>Türkiye Bölge Teknik Müdürü</h2>
+                <h2>{{ site.job_title }}</h2>
             </div>
             
                 <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i> 
                     <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i> 
-                    <a href="tel:+905304355366">+90 530 435 53 66</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i> 
@@ -548,17 +544,13 @@ title: "Ersan Doru - Özgeçmiş"
                     <a href="https://github.com/{{ site.github_username }}" target="_blank">github.com/{{ site.github_username }}</a>
                 </div>
                 <div class="contact-item">
-                    <i class="fab fa-steam"></i> 
-                    <a href="https://steamcommunity.com/id/ersandoru" target="_blank">steamcommunity.com/id/ersandoru</a>
-                </div>
-                <div class="contact-item">
                     <i class="fas fa-globe"></i> 
                     <a href="{{ site.url }}" target="_blank">{{ site.url | remove: "http://" | remove: "https://" }}</a>
                 </div>
             </div>
 
             <div class="skills-section">
-                <h3>Uzmanlık</h3>
+                <h3>Uzmanlık Alanları</h3>
                 {% for category in site.data.skills %}
                 <div class="skill-group">
                     <h4>{{ category.name }}</h4>
@@ -577,10 +569,19 @@ title: "Ersan Doru - Özgeçmiş"
             <div class="section">
                 <h2 class="section-title"><i class="fas fa-user"></i> Profesyonel Profil</h2>
                 <div class="about-text">
-                    <p>Geniş ölçekli ve kritik öneme sahip sistemlerin tasarımı, işletilmesi ve kararlılığının sağlanması konularında kapsamlı deneyime sahip teknik bir liderim. Kariyerim boyunca yazılım mühendisliği, sistem mimarisi, veritabanı platformları ve teknik operasyonlar alanlarında çalışarak, karmaşık sistemlerin gerçek üretim ortamlarındaki performansına dair uçtan uca güçlü bir anlayış geliştirdim. Geçmişim, uygulamalı mühendislik ile operasyonel sahipliği birleştirmektedir.</p>
-                    <p>Mevcut rolümde, 7/24 çalışan ve işlem yoğunluğu yüksek platformların erişilebilirliğini, performansını ve güvenilirliğini sağlayarak ülke çapındaki teknik operasyonlardan sorumluyum. Bu görev; olay yönetimi, kök neden analizi, altyapı ve veritabanı denetimi ile mühendislik ve saha ekipleriyle yakın koordinasyonu içermektedir.</p>
-                    <p>Veritabanı odaklı ve yüksek hacimli işlem sistemlerinde, özellikle veri tutarlılığı, performans ve güvenilirliğin kritik olduğu ortamlarda önemli deneyime sahibim. Teknik gereksinimleri istikrarlı ve ölçeklenebilir çözümlere dönüştürmek için ürün, Ar-Ge ve operasyon paydaşlarıyla düzenli olarak iş birliği yapıyorum. Yaklaşımım pragmatik ve yapılandırılmış olup netlik, hesap verebilirlik ve sistemin uzun vadeli bakımı üzerine odaklanmaktadır. Güvenilirlik, öngörülebilirlik ve operasyonel mükemmelliği önceliklendiren mühendislik kararlarına değer veriyorum.</p>
-                    <p>Her zaman yeni araçları ve teknolojileri keşfetmekteyim.</p>
+                    <p>Yazılım geliştirme, altyapı, veritabanları ve kritik üretim sistemlerinde 20 yılı aşkın deneyime sahip Teknik Operasyonlar Müdürü.</p>
+                    <p>Şu anda Türkiye genelinde toplu taşıma ödeme ve doğrulama platformlarının ulusal teknik operasyonlarını yönetiyor. 7/24 güvenilirlik, olay iletimi, kök neden analizi, veritabanı ve arka uç servis koordinasyonu, saha mühendisliği desteği ve üretim sürümü hazırlığından sorumludur.</p>
+                    <p>Oracle veritabanları, Linux sistemleri, WebLogic, Docker, HAProxy/Nginx, arka uç servisleri, otomasyon ve operasyonel izleme konularında güçlü saha tecrübesine sahip. Kalıcı çözümler üretmek için saha düzeyindeki cihaz sorunlarını arka uç servisleri, veritabanı davranışları, günlükler ve yapılandırma katmanlarıyla ilişkilendirme konusunda deneyimlidir.</p>
+                    <p>Mühendislik derinliğini operasyonel sahiplikle birleştirerek güvenilirlik, açıklık, hesap verebilirlik ve uzun vadeli sürdürülebilirliğe odaklanıyorum.</p>
+                    
+                    <h4 style="margin-top: 1.5rem; color: var(--text-main); font-family: 'Outfit';">Operasyonel Etki</h4>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem; color: var(--text-muted);">
+                        <li>Ulusal toplu taşıma sistemleri için teknik iletim ve güvenilirlik süreçlerini yönetti.</li>
+                        <li>Arka uç servisleri, Oracle veritabanları, saha cihazları, altyapı ve müşteri odaklı operasyonel sorunlar üzerinde çalıştı.</li>
+                        <li>Manuel kontrolleri azaltmak ve olay görünürlüğünü artırmak için otomasyon ve izleme yaklaşımları oluşturdu.</li>
+                        <li>Ar-Ge, saha ekipleri, proje ekipleri ve müşteri operasyonları arasında köprü görevi gördü.</li>
+                        <li>Kalıcı düzeltmelere, tekrarlanabilir prosedürlere ve ölçülebilir operasyonel istikrara odaklandı.</li>
+                    </ul>
                 </div>
             </div>
 

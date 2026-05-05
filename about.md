@@ -4,10 +4,10 @@ title: About
 permalink: /about/
 ---
 
-I am the **Turkey Region Technical Manager at Kentkart**, a global leader in smart card and ticketing solutions for public transportation. With a professional journey in the IT sector that began in 2005, I have cultivated deep expertise in software development, high-availability server infrastructures, and complex database management.
+Technical Operations Manager with 20+ years of experience across software development, infrastructure, databases, and mission-critical production systems.
 
-Throughout my career, I've had the privilege of leading R&D initiatives, managing large-scale technical projects, and designing mission-critical systems. My focus is on delivering resilient, high-performance solutions that operate 24/7.
+Currently leading nationwide technical operations for public transportation payment and validation platforms in Türkiye. Responsible for 24/7 reliability, incident escalation, root cause analysis, database and backend service coordination, field engineering support, and production release readiness.
 
-I am driven by a mission to provide high-quality and reliable technological solutions that exceed client expectations. A lifelong learner, I am passionate about the intersection of science and technology, and I'm always exploring new tools—from Ansible and Proxmox for infrastructure automation to modern development frameworks.
+Strong hands-on background in Oracle databases, Linux systems, WebLogic, Docker, HAProxy/Nginx, backend services, automation, and operational monitoring. Experienced in connecting field-level device issues with backend services, database behavior, logs, and configuration layers to identify permanent solutions.
 
-Beyond my professional life, I have a keen interest in science, technology, and anime, and I am currently dedicated to mastering new languages.
+I combine engineering depth with operational ownership, focusing on reliability, clarity, accountability, and long-term maintainability.

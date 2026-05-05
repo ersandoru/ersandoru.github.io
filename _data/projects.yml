@@ -1,34 +1,3 @@
-- name: akil-oyunlari
-  url: https://github.com/ersandoru/akil-oyunlari
-  description: "Modern web-based mind and strategy games platform with smart bot support."
-  tags:
-    - Web
-    - Strategy
-    - AI
-
-- name: servmobil
-  url: https://github.com/ersandoru/servmobil
-  description: "NestJS, Angular, and PostgreSQL based modular school/shuttle transport ERP system."
-  tags:
-    - NestJS
-    - Angular
-    - PostgreSQL
-
-- name: tabularis
-  url: https://github.com/ersandoru/tabularis
-  description: "Modern web application for psychological instrument management, survey building, and data analysis."
-  tags:
-    - Web
-    - Data Analysis
-
-- name: latalier-doz
-  url: https://github.com/ersandoru/latalier-doz
-  description: "Angular storefront with a Node/Express and MySQL API for a handmade bag shop."
-  tags:
-    - Angular
-    - Node.js
-    - E-commerce
-
 - name: OracleToolBox
   url: https://github.com/ersandoru/OracleToolBox
   description: "Web-based toolbox to transfer large photo blobs from Oracle to PostgreSQL with streaming progress."
@@ -37,22 +6,6 @@
     - PostgreSQL
     - Node.js
 
-- name: Terapium
-  url: https://github.com/ersandoru/Terapium
-  description: "Dockerized Node.js/Express backend application with PostgreSQL for therapeutic management."
-  tags:
-    - Node.js
-    - Docker
-    - PostgreSQL
-
-- name: enki
-  url: https://github.com/ersandoru/enki
-  description: "Voice-first developer assistant with an Express API, Flutter client, and automated project scaffolding."
-  tags:
-    - Flutter
-    - Express
-    - Voice AI
-
 - name: teleman
   url: https://github.com/ersandoru/teleman
   description: "Tauri 2 desktop app to connect to Oracle databases, list schemas, and expose a local HTTP API."
@@ -60,30 +13,6 @@
     - Tauri
     - Rust
     - Oracle
-
-- name: video-uploader
-  url: https://github.com/ersandoru/video-uploader
-  description: "Full-stack Angular and Node.js application for uploading, managing, and viewing videos."
-  tags:
-    - Angular
-    - Node.js
-    - Docker
-
-- name: otp2
-  url: https://github.com/ersandoru/otp2
-  description: "OpenTripPlanner (OTP) v2.8 Docker setup optimized with OpenStreetMap and GTFS data for Turkey."
-  tags:
-    - Docker
-    - OTP
-    - Transit
-
-- name: KING
-  url: https://github.com/ersandoru/KING
-  description: "Monorepo skeleton for an Online King card game MVP using modern web technologies."
-  tags:
-    - Web
-    - Game
-    - Monorepo
 
 - name: weblogic
   url: https://github.com/ersandoru/weblogic
@@ -108,3 +37,11 @@
     - Node.js
     - MySQL
     - Automation
+
+- name: servmobil
+  url: https://github.com/ersandoru/servmobil
+  description: "NestJS, Angular, and PostgreSQL based modular school/shuttle transport ERP system."
+  tags:
+    - NestJS
+    - Angular
+    - PostgreSQL

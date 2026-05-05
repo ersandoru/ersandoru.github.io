@@ -1,7 +1,13 @@
 - title: Technical Operations Manager – Türkiye
   company: Kentkart
   period: Jul 2024 - Present
-  description: "Responsible for leading nationwide technical operations for mission-critical public transportation systems across Türkiye. Coordinates software, database, infrastructure, and field engineering teams to ensure end-to-end reliability of payment and validation platforms. Manages 24/7 operations, incident management, and acts as the technical escalation point for R&D."
+  description: "Leading technical operations for public transportation systems across 25+ cities in Türkiye, covering AFC/ABT platforms, validators, backend services, databases, and field engineering escalations."
+  highlights:
+    - Led nationwide technical operations for 24/7 public transportation payment and validation systems across Türkiye.
+    - Coordinated software, database, infrastructure, and field teams during high-priority incidents and production escalations.
+    - Designed operational control processes for daily transaction, financial, device, and service-level monitoring.
+    - Improved root cause analysis workflows by connecting field symptoms with backend logs, Oracle database records, and service behavior.
+    - Supported database migrations, trigger deployments, service updates, and production release coordination across multiple city schemas.
 
 - title: Field Application Engineering Senior Team Leader
   company: Kentkart Ege Elektronik A.S.
@@ -16,7 +22,7 @@
 - title: Project Engineer
   company: Kentkart Ege Elektronik A.S.
   period: 2015 – 2016
-  description: "Overseas domestic project installations and requirements gathering. Maintained clear communication between customers and internal teams to ensure successful project execution."
+  description: "Managed domestic and international project installations, gathered customer requirements, and coordinated communication between customers and internal technical teams."
 
 - title: Project Manager, R&D / Software Developer
   company: Vendeka Information Technologies
@@ -31,9 +37,9 @@
 - title: IT Manager
   company: VS Lighting Equipments
   period: 2009 - 2011
-  description: "Handling all IT operations, maintaining and updating the company's websites, correspondence with international companies, providing support for print-related tasks as needed, and managing the sales team's work schedule."
+  description: "Handled all IT operations, maintained company websites, coordinated with international partners, supported print-related workflows, and managed the sales team's work schedule."
 
 - title: System Expert
-  company: Superonline Databacenter - EnterPro Systems
+  company: Superonline Datacenter - EnterPro Systems
   period: 2005 - 2007
-  description: "Providing swift solutions to issues arising within the datacenter and managing Superonline's hosting servers, including the execution of tasks on these servers."
+  description: "Provided rapid incident response for datacenter operations and managed hosting servers for Superonline infrastructure."
