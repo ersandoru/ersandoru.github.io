@@ -654,5 +654,101 @@ title: "Ersan Doru - Mentad"
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elvishMap = {
+                'dh': '\uE00C', 'th': '\uE008', 'ch': '\uE002', 'sh': '\uE00A', 'ld': '\uE01B', 'rd': '\uE019', 'kh': '\uE00B',
+                't': '\uE000', 'p': '\uE001', 'c': '\uE002', 'k': '\uE002', 'q': '\uE003', 'd': '\uE004', 'b': '\uE005',
+                'j': '\uE006', 'g': '\uE007', 'f': '\uE009', 'h': '\uE020', 'l': '\uE01A', 'm': '\uE011', 'n': '\uE010',
+                'r': '\uE018', 's': '\uE01C', 'v': '\uE00D', 'w': '\uE015', 'y': '\uE016', 'z': '\uE01E',
+                'T': '\uE000', 'P': '\uE001', 'C': '\uE002', 'K': '\uE002', 'Q': '\uE003', 'D': '\uE004', 'B': '\uE005',
+                'J': '\uE006', 'G': '\uE007', 'F': '\uE009', 'H': '\uE020', 'L': '\uE01A', 'M': '\uE011', 'N': '\uE010',
+                'R': '\uE018', 'S': '\uE01C', 'V': '\uE00D', 'W': '\uE015', 'Y': '\uE016', 'Z': '\uE01E'
+            };
+
+            const elvishVowels = {
+                'a': '\uE042', 'A': '\uE042',
+                'e': '\uE040', 'E': '\uE040',
+                'i': '\uE041', 'I': '\uE041',
+                'o': '\uE043', 'O': '\uE043',
+                'u': '\uE044', 'U': '\uE044'
+            };
+
+            function transliterateElvish(text) {
+                let tokens = [];
+                let i = 0;
+                while (i < text.length) {
+                    let char = text[i];
+                    
+                    // Multi-character consonants
+                    if (i + 1 < text.length) {
+                        let next2 = text.substr(i, 2).toLowerCase();
+                        if (['dh', 'th', 'ch', 'sh', 'ld', 'rd', 'kh'].includes(next2)) {
+                            tokens.push({ type: 'consonant', value: next2 });
+                            i += 2;
+                            continue;
+                        }
+                    }
+                    
+                    if (['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].includes(char)) {
+                        tokens.push({ type: 'vowel', value: char });
+                        i++;
+                    } else if (/[a-zA-Z]/.test(char)) {
+                        tokens.push({ type: 'consonant', value: char });
+                        i++;
+                    } else {
+                        tokens.push({ type: 'other', value: char });
+                        i++;
+                    }
+                }
+                
+                let lastConsonantIndex = -1;
+                let mappedTokens = [];
+                
+                for (let j = 0; j < tokens.length; j++) {
+                    let t = tokens[j];
+                    if (t.type === 'consonant') {
+                        let mappedCons = elvishMap[t.value] || t.value;
+                        mappedTokens.push({ value: mappedCons, type: 'con', vowelAdded: false });
+                        lastConsonantIndex = mappedTokens.length - 1;
+                    } else if (t.type === 'vowel') {
+                        let dia = elvishVowels[t.value];
+                        if (lastConsonantIndex !== -1 && !mappedTokens[lastConsonantIndex].vowelAdded) {
+                            // Attach to preceding consonant
+                            mappedTokens[lastConsonantIndex].value += dia;
+                            mappedTokens[lastConsonantIndex].vowelAdded = true;
+                        } else {
+                            // No preceding free consonant, use short carrier
+                            mappedTokens.push({ value: '\uE028' + dia, type: 'vow', vowelAdded: true });
+                        }
+                    } else {
+                        mappedTokens.push({ value: t.value, type: 'oth' });
+                        lastConsonantIndex = -1; // Reset consonant attachment across punctuation/spaces
+                    }
+                }
+                
+                return mappedTokens.map(mt => mt.value).join('');
+            }
+
+            function walk(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    node.nodeValue = transliterateElvish(node.nodeValue);
+                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    if (node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE' && 
+                        !node.classList.contains('fa') && !node.classList.contains('fas') && 
+                        !node.classList.contains('fab') && !node.classList.contains('far')) {
+                        for (let child of node.childNodes) {
+                            walk(child);
+                        }
+                    }
+                }
+            }
+
+            const wrapper = document.querySelector(".cv-wrapper");
+            if (wrapper) {
+                walk(wrapper);
+            }
+        });
+    </script>
 </body>
 </html>
