@@ -13,6 +13,13 @@ title: "Ersan Doru - batlh lI'moH"
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @font-face {
+            font-family: 'Klingon-pIqaD-HaSta';
+            src: url("{{ '/assets/fonts/Klingon-pIqaD-HaSta.ttf' | relative_url }}") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         /* CSS Reset & Variables */
         :root {
             --bg-color: #f3f4f6;
@@ -31,7 +38,7 @@ title: "Ersan Doru - batlh lI'moH"
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Klingon-pIqaD-HaSta', 'Inter', sans-serif; 
             background-color: var(--bg-color); 
             color: var(--text-main); 
             line-height: 1.6; 
@@ -40,7 +47,7 @@ title: "Ersan Doru - batlh lI'moH"
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Klingon-pIqaD-HaSta', 'Outfit', sans-serif;
         }
 
         /* Layout */
@@ -96,7 +103,7 @@ title: "Ersan Doru - batlh lI'moH"
             font-weight: 400; 
             color: #fed7d7; 
             margin-bottom: 2.5rem; 
-            font-family: 'Inter', sans-serif;
+            font-family: 'Klingon-pIqaD-HaSta', 'Inter', sans-serif;
         }
         
         .contact-info { 
@@ -162,7 +169,7 @@ title: "Ersan Doru - batlh lI'moH"
             font-weight: 500; 
             margin-bottom: 0.8rem; 
             color: #feb2b2; 
-            font-family: 'Inter', sans-serif;
+            font-family: 'Klingon-pIqaD-HaSta', 'Inter', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -300,7 +307,7 @@ title: "Ersan Doru - batlh lI'moH"
         }
         
         .timeline-title { 
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Klingon-pIqaD-HaSta', 'Outfit', sans-serif;
             font-weight: 600; 
             font-size: 1.25rem; 
             color: var(--text-main); 
@@ -356,6 +363,11 @@ title: "Ersan Doru - batlh lI'moH"
             transform: translateY(-5px) scale(1.05);
             background: #9b2c2c;
             box-shadow: 0 15px 20px -3px rgba(197, 48, 48, 0.5);
+        }
+
+        /* Ensure controls remain legible in standard fonts */
+        .lang-switcher, .print-btn {
+            font-family: 'Outfit', 'Inter', sans-serif !important;
         }
 
         /* Language Switcher Styles */
