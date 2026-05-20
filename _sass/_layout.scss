@@ -67,15 +67,33 @@ body {
     margin-left: auto;
     display: flex;
     gap: 30px;
+    align-items: center;
 
     .page-link {
         color: $grey-dark;
         text-decoration: none;
         font-weight: 500;
-        transition: color 0.2s;
+        transition: all 0.2s;
 
         &:hover {
             color: $brand-color;
+        }
+
+        &.cv-btn {
+            background: linear-gradient(135deg, $brand-color 0%, $accent-color 100%);
+            color: #ffffff !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba($brand-color, 0.2);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba($brand-color, 0.4);
+                background: linear-gradient(135deg, darken($brand-color, 5%) 0%, darken($accent-color, 5%) 100%);
+                color: #ffffff !important;
+            }
         }
     }
 }
@@ -382,6 +400,19 @@ body {
     .site-title,
     .page-link {
         color: $dark-text !important;
+    }
+
+    .page-link.cv-btn {
+        background: linear-gradient(135deg, $brand-dark 0%, $accent-color 100%) !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 10px rgba($brand-dark, 0.4);
+
+        &:hover {
+            background: linear-gradient(135deg, darken($brand-dark, 5%) 0%, darken($accent-color, 5%) 100%) !important;
+            box-shadow: 0 6px 15px rgba($brand-dark, 0.6);
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
     }
 
     .site-nav {
